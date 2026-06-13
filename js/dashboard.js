@@ -719,6 +719,29 @@ function processPayment() {
   showToast(`Pembayaran berhasil diproses (${method})`);
 }
 
+function toggleUserMenu() {
+  const dropdown = document.getElementById('user-menu-dropdown');
+  if (dropdown) {
+    dropdown.classList.toggle('active');
+  }
+}
+
+function handleLogout() {
+  if (confirm('Apakah Anda yakin ingin keluar?')) {
+    sessionStorage.removeItem('petcareUser');
+    window.location.href = '../pages/login.html';
+  }
+}
+
+// Close user menu when clicking outside
+document.addEventListener('click', (e) => {
+  const userMenu = document.querySelector('.user-menu');
+  const dropdown = document.getElementById('user-menu-dropdown');
+  if (userMenu && !userMenu.contains(e.target)) {
+    dropdown?.classList.remove('active');
+  }
+});
+
 function initDashboardPage() {
   if (!document.querySelector('.page-dashboard')) return;
   const stored = sessionStorage.getItem('petcareUser');
@@ -737,10 +760,19 @@ function initDashboardPage() {
   buildSidebar();
   buildBottomNav();
   renderView(currentView);
-  document.getElementById('logout-btn')?.addEventListener('click', () => {
-    sessionStorage.removeItem('petcareUser');
-    window.location.href = 'login.html';
-  });
+  
+  // Set up user menu
+  const userMenuName = document.getElementById('user-menu-name');
+  const userMenuBtn = document.getElementById('user-menu-btn');
+  if (userMenuName) userMenuName.textContent = currentUser?.name || 'User';
+  if (userMenuBtn) userMenuBtn.addEventListener('click', toggleUserMenu);
+  
+  // Sidebar logout button (legacy, still works)
+  const sidebarLogout = document.querySelector('.sidebar-logout');
+  if (sidebarLogout) {
+    sidebarLogout.addEventListener('click', handleLogout);
+  }
+  
   document.getElementById('floating-booking')?.addEventListener('click', () => navigateTo('appointments'));
   renderNotifications();
 }

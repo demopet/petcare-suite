@@ -39,6 +39,18 @@
         <div class="header-actions">
           <button class="btn btn-icon" id="sidebar-toggle" type="button"><i data-lucide="menu"></i></button>
           <button class="btn btn-icon" type="button" onclick="openModal('notif-modal')"><i data-lucide="bell"></i><span class="badge-pill" id="notif-badge">3</span></button>
+          <div class="user-menu">
+            <button class="user-menu-btn" id="user-menu-btn" type="button">
+              <i data-lucide="user-circle"></i>
+              <span id="user-menu-name">User</span>
+            </button>
+            <div class="user-menu-dropdown" id="user-menu-dropdown">
+              <button class="user-menu-item" type="button" onclick="alert('Fitur profil - segera tersedia')"><i data-lucide="user"></i>Profil</button>
+              <button class="user-menu-item" type="button" onclick="alert('Fitur pengaturan - segera tersedia')"><i data-lucide="settings"></i>Pengaturan</button>
+              <div class="user-menu-divider"></div>
+              <button class="user-menu-item user-menu-logout" type="button" id="logout-btn" onclick="handleLogout()"><i data-lucide="log-out"></i>Keluar</button>
+            </div>
+          </div>
         </div>
       </header>
       <main class="dashboard-content" id="app-content">

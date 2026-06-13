@@ -500,23 +500,34 @@ textarea:focus-visible {
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.95);
-  padding: 26px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(248,250,252,0.95));
+  padding: 28px;
   border-radius: 28px;
-  box-shadow: 0 18px 48px rgba(15,23,42,0.06);
+  box-shadow: 0 10px 40px rgba(15,23,42,0.08);
   text-align: left;
+  border: 1px solid rgba(15, 141, 130, 0.08);
+  transition: all var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 60px rgba(15,23,42,0.12);
+  border-color: rgba(15, 141, 130, 0.16);
 }
 
 .stat-card strong {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
+  color: var(--accent-dark);
+  margin-bottom: 8px;
 }
 
 .stat-card span {
   display: block;
-  margin-top: 12px;
+  font-size: 0.95rem;
   color: var(--text-muted);
+  font-weight: 600;
 }
 
 .hero-visual {
@@ -669,8 +680,11 @@ textarea:focus-visible {
 }
 
 .page-landing .hero-panel {
-  min-height: calc(100vh - 24px);
-  padding: 32px 24px 40px;
+  min-height: 100vh;
+  padding: 0 24px 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .hero-topbar,
@@ -682,7 +696,17 @@ textarea:focus-visible {
 }
 
 .hero-topbar {
-  margin-bottom: 48px;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(247, 249, 251, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-bottom: 1px solid rgba(15, 141, 130, 0.08);
+  flex-shrink: 0;
 }
 
 .brand-link {
@@ -713,20 +737,41 @@ textarea:focus-visible {
 .nav-link {
   color: var(--text-muted);
   font-weight: 600;
-  transition: color var(--transition);
+  transition: color var(--transition), background var(--transition);
+  padding: 10px 16px;
+  border-radius: 12px;
+}
+
+.nav-link:hover {
+  color: var(--accent-dark);
+  background: rgba(15, 141, 130, 0.08);
+}
+
+.nav-link-cta {
+  background: linear-gradient(135deg, var(--accent), #137c72);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+.nav-link-cta {
+  background: linear-gradient(135deg, var(--accent), #137c72);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(15, 141, 130, 0.15);
+  transition: all var(--transition);
 }
 
 .nav-link:hover,
 .nav-link-cta:hover {
-  color: var(--accent-dark);
-}
-
-.nav-link-cta {
-  color: var(--accent);
+  color: white;
+  box-shadow: 0 12px 36px rgba(15, 141, 130, 0.25);
+  transform: translateY(-2px);
 }
 
 .hero-content {
   align-items: flex-start;
+  flex: 1;
+  padding-top: 32px;
 }
 
 .hero-copy {
