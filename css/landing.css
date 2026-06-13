@@ -1,0 +1,63 @@
+.page-landing {
+  background: transparent;
+}
+
+.site-shell {
+  padding: 0 24px 60px;
+}
+
+section.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.site-footer {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: var(--text-muted);
+}
+
+.hero-card,
+.testimonial-card,
+.gallery-item,
+.contact-card,
+.blog-card {
+  min-height: auto;
+}
+
+.faq-item {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.faq-panel {
+  display: none;
+  padding: 18px 22px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.faq-item.active + .faq-panel {
+  display: block;
+}
+
+.hero-image {
+  min-height: 420px;
+}
+
+@media (max-width: 900px) {
+  .site-shell {
+    padding: 0 18px 40px;
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | PetCare Veterinary Clinic</title>
+  <meta name="description" content="Dashboard demo PetCare Veterinary Clinic untuk manajemen klinik hewan.">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="page-dashboard">
+  <div class="dashboard-shell" id="dashboard-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img class="brand-mark" src="../assets/icons/logo.svg" alt="PetCare logo">
+        <div>
+          <span class="eyebrow">PetCare</span>
+          <p>Clinic Control</p>
+        </div>
+      </div>
+      <div class="sidebar-user">
+        <p class="sidebar-user-name" id="sidebar-user-name">Loading...</p>
+        <p class="sidebar-user-role" id="sidebar-user-role">-</p>
+      </div>
+      <nav class="sidebar-nav" id="sidebar-nav"></nav>
+      <button class="btn btn-ghost sidebar-logout" type="button" id="logout-btn"><i data-lucide="log-out"></i>Keluar</button>
+    </aside>
+    <div class="dashboard-main">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow" id="topbar-date">Tanggal</p>
+          <h1 class="page-title" id="topbar-title">Dashboard</h1>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-icon" id="sidebar-toggle" type="button"><i data-lucide="menu"></i></button>
+          <button class="btn btn-icon" type="button" onclick="openModal('notif-modal')"><i data-lucide="bell"></i><span class="badge-pill" id="notif-badge">3</span></button>
+        </div>
+      </header>
+      <main class="dashboard-content" id="app-content">
+        <div class="skeleton-grid">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+      </main>
+    </div>
+    <nav class="bottom-nav" id="bottom-nav"></nav>
+    <button class="floating-btn" id="floating-booking" type="button">Booking Appointment</button>
+  </div>
+
+  <div class="modal-overlay" id="notif-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Notifikasi</p>
+          <h2>Aktifitas Terbaru</h2>
+        </div>
+        <button class="modal-close" type="button" onclick="closeModal('notif-modal')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body" id="notif-list"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="record-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Form Baru</p>
+          <h2 id="record-modal-title">Detail</h2>
+        </div>
+        <button class="modal-close" type="button" onclick="closeModal('record-modal')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body" id="record-modal-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" onclick="closeModal('record-modal')">Batal</button>
+        <button class="btn btn-primary" type="button" onclick="saveRecord()">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="payment-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Pembayaran</p>
+          <h2>Proses Pembayaran</h2>
+        </div>
+        <button class="modal-close" type="button" onclick="closeModal('payment-modal')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body" id="payment-modal-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" onclick="closeModal('payment-modal')">Batal</button>
+        <button class="btn btn-primary" type="button" onclick="processPayment()">Bayar Sekarang</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk | PetCare Veterinary Clinic</title>
+  <meta name="description" content="Login ke PetCare Veterinary Clinic untuk mencoba demo manajemen klinik hewan.">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body class="page-login">
+  <div class="auth-shell">
+    <div class="auth-panel auth-intro">
+      <img class="brand-mark-big" src="../assets/icons/logo.svg" alt="PetCare logo">
+      <div>
+        <p class="eyebrow">PetCare Veterinary Clinic</p>
+        <h1>Portal Demo Klinik Hewan</h1>
+        <p>Masuk untuk melihat fitur sistem manajemen klinik, lihat jadwal, laporan, dan kelola operasi klinik.</p>
+      </div>
+    </div>
+    <div class="auth-panel auth-form">
+      <div class="auth-header">
+        <p class="eyebrow">Masuk</p>
+        <h2>Demo akses cepat</h2>
+        <p>Pilih peran dan gunakan password <strong>demo123</strong>.</p>
+      </div>
+      <form id="login-form" class="form-card">
+        <label>Alamat Email</label>
+        <input id="login-email" type="email" placeholder="email@example.com" value="owner@petcare.id" required>
+        <label>Password</label>
+        <input id="login-password" type="password" placeholder="••••••••" value="demo123" required>
+        <label>Peran</label>
+        <select id="login-role">
+          <option value="owner">Owner</option>
+          <option value="doctor">Doctor</option>
+          <option value="staff">Staff</option>
+          <option value="customer">Customer</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Masuk</button>
+      </form>
+
+      <div class="demo-cards">
+        <div class="demo-card" data-email="owner@petcare.id" data-role="owner">
+          <strong>Owner</strong>
+          <span>owner@petcare.id</span>
+        </div>
+        <div class="demo-card" data-email="dokter@petcare.id" data-role="doctor">
+          <strong>Doctor</strong>
+          <span>dokter@petcare.id</span>
+        </div>
+        <div class="demo-card" data-email="staff@petcare.id" data-role="staff">
+          <strong>Staff</strong>
+          <span>staff@petcare.id</span>
+        </div>
+        <div class="demo-card" data-email="budi@gmail.com" data-role="customer">
+          <strong>Customer</strong>
+          <span>budi@gmail.com</span>
+        </div>
+      </div>
+      <p class="auth-note">Password demo semua akun: <strong>demo123</strong>. <a href="../index.html">Kembali ke Beranda</a></p>
+    </div>
+  </div>
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
