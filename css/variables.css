@@ -1,4 +1,5 @@
 :root {
+  /* Colors */
   --bg: #f7f9fb;
   --surface: rgba(255,255,255,0.88);
   --surface-strong: #ffffff;
@@ -7,19 +8,75 @@
   --border-strong: rgba(31,45,61,0.12);
   --shadow: 0 24px 80px rgba(15,23,42,0.08);
   --shadow-soft: 0 12px 32px rgba(15,23,42,0.05);
+  --shadow-md: 0 16px 48px rgba(15,23,42,0.06);
+  --shadow-xs: 0 4px 12px rgba(15,23,42,0.04);
   --text: #10233b;
   --text-muted: #5d7285;
+  --text-light: #8a9aaa;
   --accent: #0f8d82;
   --accent-dark: #0a7164;
   --accent-soft: #e8f7f5;
   --success: #0f8d82;
   --warning: #d9732d;
   --danger: #dd4d4d;
+  --info: #2563eb;
+  
+  /* Border Radius */
   --radius: 24px;
+  --radius-lg: 28px;
+  --radius-md: 20px;
   --radius-sm: 16px;
-  --radius-xxs: 12px;
+  --radius-xs: 12px;
+  --radius-xxs: 8px;
+  
+  /* Transitions */
   --transition: 220ms ease;
+  --transition-fast: 150ms ease;
+  --transition-slow: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Typography */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+  
+  --lh-tight: 1.1;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+  
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 32px;
+  --space-4xl: 40px;
+  --space-5xl: 48px;
+  --space-6xl: 64px;
+  
+  /* Layout */
   --max-width: 1240px;
+  --max-width-lg: 1024px;
+  --max-width-md: 768px;
+  
+  /* Breakpoints for responsive */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
 }
 
 * {
@@ -33,7 +90,11 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
   color: var(--text);
   background: radial-gradient(circle at top left, rgba(15,141,130,0.12), transparent 32%),
               radial-gradient(circle at bottom right, rgba(15,141,130,0.08), transparent 24%),
